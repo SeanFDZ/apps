@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Support - Universal JSON Display</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: hsl(46.82, 100%, 50%);
+            color: #000;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        nav {
+            margin-bottom: 2rem;
+        }
+        nav a {
+            color: #000;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        nav a:hover {
+            opacity: 1;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            line-height: 1.7;
+            color: #000;
+        }
+        a {
+            color: #3498DB;
+        }
+        code {
+            background: rgba(0, 0, 0, 0.08);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .contact-box {
+            background: #f8f8f8;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .contact-box p {
+            color: #000;
+            margin-bottom: 0.5rem;
+        }
+        .contact-box a {
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        .contact-box .github {
+            display: block;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1.5rem 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .faq-item p {
+            color: #000;
+            margin-bottom: 0.5rem;
+        }
+        .faq-item p:last-child {
+            margin-bottom: 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #000;
+        }
+        footer img {
+            max-height: 72px;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/universal-json-display/">← Universal JSON Display</a>
+        </nav>
+        
+        <h1>Support</h1>
+        
+        <div class="contact-box">
+            <p>Questions or issues?</p>
+            <a href="mailto:support@fallingdata.zone">support@fallingdata.zone</a>
+            <a href="https://github.com/SeanFDZ/stream-deck-universal-json/issues" class="github" target="_blank">Or open an issue on GitHub</a>
+        </div>
+        
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <h3>My n8n webhook isn't working</h3>
+            <p>The most common cause: your n8n workflow is in test mode, not activated. In n8n, workflows must be <strong>Active</strong> (toggle in the top right) for webhooks to respond to external requests. Test executions only work from within the n8n editor.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Field discovery shows no fields</h3>
+            <p>Make sure your data source returns valid JSON. Test the URL in a browser or with <code>curl</code> to verify. If the endpoint requires authentication, use n8n as a proxy—the plugin makes unauthenticated requests.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>How do I access array data?</h3>
+            <p>Arrays are supported using index notation. For example, if your JSON has <code>{"meters": [{"power": 48.5}]}</code>, select <code>meters.0.power</code> from the field dropdown. The first element (index 0) is discovered automatically.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Color coding isn't working</h3>
+            <p>Dynamic color coding requires a numeric field. The plugin can extract numbers from formatted strings (like "88°F" → 88), but the source field must contain a number. Make sure you've selected a numeric field for color coding, not a text field.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Button shows an error state</h3>
+            <p>This usually means the data source is unreachable. Check that the URL is correct and accessible from your machine. The button will automatically retry on the next polling cycle. Press the button to force an immediate refresh.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>How do I use this with authenticated APIs?</h3>
+            <p>Use n8n as an authentication proxy. Create an n8n workflow with: Webhook Trigger → HTTP Request (with your API credentials) → Respond to Webhook. Point the plugin at your n8n webhook URL. n8n handles the authentication; the plugin just receives clean JSON.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Can I trigger actions when I press the button?</h3>
+            <p>Yes. In the button configuration, enable the HTTP webhook action. You can send GET, POST, PUT, or DELETE requests to any URL when the button is pressed. Use template variables like <code>{{timestamp}}</code> and <code>{{data}}</code> in your JSON payload.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>What's the minimum refresh interval?</h3>
+            <p>10 seconds. The default is 30 seconds. You can set any value between 10 and 300 seconds. For real-time data, consider whether your data source can handle frequent polling.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Does this work with Stream Deck+?</h3>
+            <p>Yes. The plugin works with all Stream Deck models running Stream Deck software version 6.5 or later, including Stream Deck+, Stream Deck XL, Stream Deck MK.2, and the original Stream Deck.</p>
+        </div>
+        
+        <footer>
+            <img src="/FDZ-Logo-Only.png" alt="">
+            <p>Powered by Data &amp; Strategy</p>
+        </footer>
+    </div>
+</body>
+</html>

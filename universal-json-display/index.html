@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Universal JSON Display - Stream Deck Plugin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: hsl(46.82, 100%, 50%);
+            color: #000;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        nav {
+            margin-bottom: 2rem;
+        }
+        nav a {
+            color: #000;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        nav a:hover {
+            opacity: 1;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+        .tagline {
+            color: #000;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .store-badge {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: rgba(39, 174, 96, 0.15);
+            border: 1px solid #27AE60;
+            border-radius: 8px;
+            color: #27AE60;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .store-badge:hover {
+            background: rgba(39, 174, 96, 0.25);
+        }
+        .section-header {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .features {
+            margin: 2rem 0;
+        }
+        .feature {
+            background: #f8f8f8;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .feature h3 {
+            color: #000;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .feature p {
+            color: #000;
+            line-height: 1.6;
+        }
+        .use-cases {
+            background: #f8f8f8;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .use-cases h3 {
+            color: #000;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .use-cases ul {
+            list-style: none;
+            padding: 0;
+        }
+        .use-cases li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: #000;
+        }
+        .use-cases li:last-child {
+            border-bottom: none;
+        }
+        .use-cases li strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .n8n-callout {
+            background: rgba(52, 152, 219, 0.1);
+            border: 1px solid rgba(52, 152, 219, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .n8n-callout h3 {
+            color: #3498DB;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .n8n-callout p {
+            color: #000;
+            line-height: 1.6;
+        }
+        .specs {
+            background: #f8f8f8;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .specs h3 {
+            color: #000;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .specs table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .specs td {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: #000;
+        }
+        .specs td:first-child {
+            font-weight: 500;
+            width: 40%;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .links a {
+            color: #000;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        .links a:hover {
+            opacity: 1;
+        }
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #000;
+        }
+        footer img {
+            max-height: 72px;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">← Falling Data Zone</a>
+        </nav>
+        
+        <header>
+            <div class="icon">📊</div>
+            <h1>Universal JSON Display</h1>
+            <p class="tagline">Transform your Stream Deck into a data dashboard</p>
+            <a href="https://marketplace.elgato.com/product/universal-json-display-12908ff3-4bf4-4e2a-8ad0-f8e1affe7c05" class="store-badge" target="_blank">Free on Elgato Marketplace</a>
+        </header>
+        
+        <p style="text-align: center; line-height: 1.7;">Display live information from any JSON API, n8n automation workflow, or local file. Automatic field discovery means zero code required—just point it at your data and go.</p>
+        
+        <h2 class="section-header">Features</h2>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🔗 Universal Data Sources</h3>
+                <p>Connect to any HTTP/HTTPS API, read local JSON files, or integrate with n8n webhooks. If it returns JSON, this plugin can display it.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🔍 Automatic Field Discovery</h3>
+                <p>No JSONPath required. The plugin analyzes your data structure and populates dropdown menus with every available field—including nested objects and arrays.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>📐 4-Line Customizable Display</h3>
+                <p>Each button shows up to 4 lines, each configurable as static text, dynamic data, or blank. Create layouts like "Server 1 / CPU: 45% / RAM: 72% / Status: OK".</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🎨 Dynamic Color Coding</h3>
+                <p>Button backgrounds change automatically based on data values. Set thresholds so your button goes green → orange → red as CPU climbs or power consumption spikes.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>⚡ Webhook Actions</h3>
+                <p>Buttons aren't just displays—press them to trigger HTTP requests. Fire n8n workflows, control IoT devices, send notifications, or trigger CI/CD pipelines.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🔄 Real-Time Updates</h3>
+                <p>Configurable polling interval (10–300 seconds). Data refreshes automatically, or press the button to refresh immediately.</p>
+            </div>
+        </div>
+        
+        <div class="n8n-callout">
+            <h3>🔧 n8n Integration</h3>
+            <p>Works seamlessly with n8n as an authentication proxy. The plugin makes simple requests to n8n webhooks, while n8n handles OAuth, API keys, and bearer tokens behind the scenes. Access any authenticated API without exposing credentials.</p>
+        </div>
+        
+        <div class="use-cases">
+            <h3>Use Cases</h3>
+            <ul>
+                <li>
+                    <strong>IoT & Smart Home</strong>
+                    Shelly smart plugs, Home Assistant sensors, custom IoT devices—monitor power, temperature, humidity at a glance.
+                </li>
+                <li>
+                    <strong>Server Monitoring</strong>
+                    CPU, memory, disk space, container stats. Any /status or /health endpoint works.
+                </li>
+                <li>
+                    <strong>Business Dashboards</strong>
+                    Sales figures, conversion rates, KPIs with color-coded performance indicators.
+                </li>
+                <li>
+                    <strong>DevOps</strong>
+                    CI/CD build status, GitHub repo stats, deployment progress.
+                </li>
+            </ul>
+        </div>
+        
+        <div class="specs">
+            <h3>Specifications</h3>
+            <table>
+                <tr>
+                    <td>Version</td>
+                    <td>2.5.0</td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td>Platforms</td>
+                    <td>macOS 12+, Windows 10+</td>
+                </tr>
+                <tr>
+                    <td>Requires</td>
+                    <td>Stream Deck 6.5 or later</td>
+                </tr>
+                <tr>
+                    <td>Source</td>
+                    <td><a href="https://github.com/SeanFDZ/stream-deck-universal-json" target="_blank">GitHub</a></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="links">
+            <a href="https://github.com/SeanFDZ/stream-deck-universal-json" target="_blank">GitHub</a>
+            <a href="/universal-json-display/support/">Support</a>
+        </div>
+        
+        <footer>
+            <img src="/FDZ-Logo-Only.png" alt="">
+            <p>Powered by Data &amp; Strategy</p>
+        </footer>
+    </div>
+</body>
+</html>
