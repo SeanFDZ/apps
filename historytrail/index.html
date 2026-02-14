@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HistoryTrail - Discover History Around You</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>HistoryTrail | Falling Data Zone</title>
     <style>
         * {
             margin: 0;
@@ -13,109 +13,129 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0d1b2a 100%);
             color: #e0e0e0;
             min-height: 100vh;
-            padding: 2rem;
+            display: flex;
+            flex-direction: column;
         }
         .container {
             max-width: 700px;
             margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
         }
         nav {
             margin-bottom: 2rem;
         }
         nav a {
-            color: #888;
+            color: #6a8caf;
             text-decoration: none;
+            font-size: 0.9rem;
         }
         nav a:hover {
-            color: #fff;
+            color: #8ab;
         }
         header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
         .icon {
             font-size: 4rem;
             margin-bottom: 1rem;
         }
         h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
+            font-size: 2.2rem;
+            font-weight: 500;
             margin-bottom: 0.5rem;
             color: #fff;
         }
         .tagline {
-            color: #888;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            color: #6a8caf;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
         }
         .app-store-badge {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.6rem 1.25rem;
+            background: rgba(255, 159, 10, 0.15);
+            border: 1px solid rgba(255, 159, 10, 0.3);
             border-radius: 8px;
-            color: #fff;
+            color: #ff9f0a;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.9rem;
         }
         .features {
-            margin: 3rem 0;
+            margin: 2.5rem 0;
         }
         .feature {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin-bottom: 0.75rem;
         }
         .feature h3 {
             color: #fff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+            font-weight: 500;
         }
         .feature p {
-            color: #aaa;
-            line-height: 1.6;
+            color: #9ab;
+            line-height: 1.5;
+            font-size: 0.95rem;
         }
         .data-credit {
-            background: rgba(255, 159, 10, 0.1);
-            border: 1px solid rgba(255, 159, 10, 0.3);
-            border-radius: 12px;
+            background: rgba(58, 124, 165, 0.1);
+            border: 1px solid rgba(58, 124, 165, 0.25);
+            border-radius: 10px;
             padding: 1.5rem;
             margin: 2rem 0;
             text-align: center;
         }
         .data-credit p {
-            color: #ccc;
+            color: #9ab;
             margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
         .data-credit a {
-            color: #ff9f0a;
+            color: #6a8caf;
+            font-weight: 500;
+        }
+        .data-credit a:hover {
+            color: #8ab;
         }
         .links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2.5rem;
         }
         .links a {
-            color: #888;
+            color: #6a8caf;
             text-decoration: none;
+            font-size: 0.9rem;
         }
         .links a:hover {
-            color: #fff;
+            color: #8ab;
         }
         footer {
             text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #666;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 2rem;
         }
-        footer a {
-            color: #888;
+        .footer-logo {
+            width: 40px;
+            height: auto;
+            opacity: 0.6;
+            margin-bottom: 0.75rem;
+        }
+        .footer-text {
+            color: #556;
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -129,7 +149,7 @@
             <div class="icon">🗺️</div>
             <h1>HistoryTrail</h1>
             <p class="tagline">Discover history around you</p>
-            <a href="#" class="app-store-badge">Coming Soon to the App Store</a>
+            <span class="app-store-badge">Coming Soon to the App Store</span>
         </header>
         
         <div class="features">
@@ -157,17 +177,18 @@
         <div class="data-credit">
             <p>Marker data provided by</p>
             <a href="https://www.hmdb.org" target="_blank">The Historical Marker Database (HMdb.org)</a>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">A volunteer-maintained catalog of historical markers worldwide</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #668;">A volunteer-maintained catalog of historical markers worldwide</p>
         </div>
         
         <div class="links">
             <a href="/historytrail/privacy/">Privacy Policy</a>
             <a href="/historytrail/support/">Support</a>
         </div>
-        
-        <footer>
-            <p>&copy; 2026 Falling Data Zone LLC</p>
-        </footer>
     </div>
+    
+    <footer>
+        <img src="/FDZ-Logo-Only.png" alt="" class="footer-logo">
+        <p class="footer-text">Powered by Data &amp; Strategy</p>
+    </footer>
 </body>
 </html>
