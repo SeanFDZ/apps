@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HistoryTrail - Discover History Around You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        nav {
+            margin-bottom: 2rem;
+        }
+        nav a {
+            color: #888;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        .tagline {
+            color: #888;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .app-store-badge {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .features {
+            margin: 3rem 0;
+        }
+        .feature {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .feature h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .feature p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+        .data-credit {
+            background: rgba(255, 159, 10, 0.1);
+            border: 1px solid rgba(255, 159, 10, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .data-credit p {
+            color: #ccc;
+            margin-bottom: 0.5rem;
+        }
+        .data-credit a {
+            color: #ff9f0a;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .links a {
+            color: #888;
+            text-decoration: none;
+        }
+        .links a:hover {
+            color: #fff;
+        }
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+        }
+        footer a {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">← Falling Data Zone</a>
+        </nav>
+        
+        <header>
+            <div class="icon">🗺️</div>
+            <h1>HistoryTrail</h1>
+            <p class="tagline">Discover history around you</p>
+            <a href="#" class="app-store-badge">Coming Soon to the App Store</a>
+        </header>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>📍 Find Nearby Markers</h3>
+                <p>See historical markers near your current location. From Civil War battlefields to forgotten pioneer trails, history is all around you.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🧭 Navigate There</h3>
+                <p>Get directions to any marker. Perfect for road trips, walking tours, or just exploring your own neighborhood.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>📖 Read the Story</h3>
+                <p>View marker inscriptions right in the app. Tap through to the full entry on HMdb.org for photos, essays, and more.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🔖 Save Favorites</h3>
+                <p>Bookmark markers you want to visit or ones you've seen. Build your own collection of local history.</p>
+            </div>
+        </div>
+        
+        <div class="data-credit">
+            <p>Marker data provided by</p>
+            <a href="https://www.hmdb.org" target="_blank">The Historical Marker Database (HMdb.org)</a>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">A volunteer-maintained catalog of historical markers worldwide</p>
+        </div>
+        
+        <div class="links">
+            <a href="/historytrail/privacy/">Privacy Policy</a>
+            <a href="/historytrail/support/">Support</a>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 Falling Data Zone LLC</p>
+        </footer>
+    </div>
+</body>
+</html>
