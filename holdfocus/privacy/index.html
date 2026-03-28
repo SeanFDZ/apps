@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Privacy Policy - HoldFocus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: hsl(46.82, 100%, 50%);
+            color: #000;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        nav {
+            margin-bottom: 2rem;
+        }
+        nav a {
+            color: #000;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        nav a:hover {
+            opacity: 1;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .last-updated {
+            color: #000;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: #000;
+        }
+        ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #000;
+        }
+        a {
+            color: #3498DB;
+        }
+        .highlight {
+            background: #f8f8f8;
+            border-left: 4px solid #27AE60;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+        .highlight strong {
+            color: #27AE60;
+        }
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #000;
+        }
+        footer img {
+            max-height: 72px;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/holdfocus/">← HoldFocus</a>
+        </nav>
+
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: March 28, 2026</p>
+
+        <div class="highlight">
+            <strong>The short version:</strong> HoldFocus does not collect, store, or transmit any of your personal data. Everything stays on your Mac.
+        </div>
+
+        <h2>Overview</h2>
+        <p>HoldFocus is designed with privacy as a core principle. The app operates entirely on your Mac without requiring an internet connection, user accounts, or cloud services.</p>
+
+        <h2>Data Collection</h2>
+        <p><strong>We do not collect any data.</strong></p>
+        <p>HoldFocus does not collect, transmit, or store any personal information on external servers. Specifically:</p>
+        <ul>
+            <li>No personal information is collected</li>
+            <li>No usage analytics or tracking</li>
+            <li>No advertising identifiers</li>
+            <li>No third-party analytics services</li>
+            <li>No cloud storage or synchronization</li>
+            <li>No telemetry of any kind</li>
+        </ul>
+
+        <h2>Data Storage</h2>
+        <p>HoldFocus stores the following data locally on your Mac:</p>
+        <ul>
+            <li><strong>Settings:</strong> Your preferences (whitelist, notification settings, timing thresholds) are stored in UserDefaults.</li>
+            <li><strong>Blocked events log:</strong> A record of focus theft events is stored in ~/Library/Application Support/HoldFocus/. This log includes only app names, timestamps, and keystroke counts — never the content of your keystrokes.</li>
+            <li><strong>License key:</strong> Stored securely in the macOS Keychain.</li>
+        </ul>
+        <p>This data never leaves your Mac unless you explicitly export the blocked events log.</p>
+
+        <h2>Accessibility and Input Monitoring</h2>
+        <p>HoldFocus requires Accessibility and Input Monitoring permissions to function. These permissions are used exclusively to:</p>
+        <ul>
+            <li>Detect when an app programmatically steals keyboard focus</li>
+            <li>Distinguish your intentional app switches from unauthorized focus theft</li>
+            <li>Buffer and replay keystrokes to the correct application</li>
+        </ul>
+        <p>HoldFocus does not log, record, or transmit the content of your keystrokes. Buffered keystrokes exist only in memory for the brief moment during a focus theft event and are immediately replayed or discarded.</p>
+
+        <h2>Network Access</h2>
+        <p>HoldFocus makes two types of network requests:</p>
+        <ul>
+            <li><strong>License validation:</strong> When you activate a license key, HoldFocus contacts the LemonSqueezy API to validate it. Only the license key is sent — no other data.</li>
+            <li><strong>Update checks:</strong> HoldFocus periodically checks for updates via Sparkle by downloading a small XML file from apps.fallingdata.zone. No personal data is sent.</li>
+        </ul>
+
+        <h2>Children's Privacy</h2>
+        <p>HoldFocus does not collect data from anyone, including children under 13.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>If we make changes to this privacy policy, we will update the "Last updated" date above.</p>
+
+        <h2>Contact</h2>
+        <p>If you have questions about this privacy policy, please contact us at:</p>
+        <p><a href="mailto:support@fallingdata.zone">support@fallingdata.zone</a></p>
+
+        <footer>
+            <img src="/FDZ-Logo-Only.png" alt="">
+            <p>Powered by Data &amp; Strategy</p>
+        </footer>
+    </div>
+</body>
+</html>

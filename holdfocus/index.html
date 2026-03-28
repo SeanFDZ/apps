@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>HoldFocus - Stop Apps From Stealing Focus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: hsl(46.82, 100%, 50%);
+            color: #000;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        nav {
+            margin-bottom: 2rem;
+        }
+        nav a {
+            color: #000;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        nav a:hover {
+            opacity: 1;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+        .tagline {
+            color: #000;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .buy-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #000;
+            border-radius: 8px;
+            color: hsl(46.82, 100%, 50%);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .buy-button:hover {
+            opacity: 0.9;
+        }
+        .price-note {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        .features {
+            margin: 3rem 0;
+        }
+        .feature {
+            background: #f8f8f8;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .feature h3 {
+            color: #000;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .feature p {
+            color: #000;
+            line-height: 1.6;
+        }
+        .privacy-highlight {
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid rgba(39, 174, 96, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .privacy-highlight h3 {
+            color: #27AE60;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .privacy-highlight p {
+            color: #000;
+        }
+        .requirements {
+            background: #f8f8f8;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .requirements h3 {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .requirements p {
+            line-height: 1.6;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .links a {
+            color: #000;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        .links a:hover {
+            opacity: 1;
+        }
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #000;
+        }
+        footer img {
+            max-height: 72px;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">← Falling Data Zone</a>
+        </nav>
+
+        <header>
+            <div class="icon">🛡️</div>
+            <h1>HoldFocus</h1>
+            <p class="tagline">Stop apps from stealing your keyboard focus</p>
+            <a href="https://fdz.lemonsqueezy.com" class="buy-button">Buy HoldFocus — $14.99</a>
+            <p class="price-note">One-time purchase. 14-day free trial. macOS only.</p>
+        </header>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Instant Focus Restoration</h3>
+                <p>When a background app steals focus while you're typing, HoldFocus detects it instantly and restores your focus to the correct app.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Keystroke Buffering</h3>
+                <p>Keystrokes typed during a focus theft are captured and replayed to the correct app. Nothing lands in the wrong window — not even passwords.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Smart Detection</h3>
+                <p>Distinguishes your intentional app switches (clicks, Cmd-Tab) from programmatic focus theft by background apps like JAMF, Logitech Hub, and auto-updaters.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Configurable Whitelist</h3>
+                <p>Allow specific apps to take focus when needed. System apps like SecurityAgent and FaceTime are whitelisted by default.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Lightweight Menu Bar App</h3>
+                <p>Lives in your menu bar. No Dock icon, no clutter. Uses minimal CPU and memory while protecting your focus.</p>
+            </div>
+        </div>
+
+        <div class="privacy-highlight">
+            <h3>No Telemetry. No Cloud. No Subscriptions.</h3>
+            <p>HoldFocus runs entirely on your Mac. No data leaves your device.<br>One-time purchase with free updates via Sparkle.</p>
+        </div>
+
+        <div class="requirements">
+            <h3>Requirements</h3>
+            <p>macOS 26 (Tahoe) or later. Apple Silicon only. Requires Accessibility and Input Monitoring permissions in System Settings.</p>
+        </div>
+
+        <div class="links">
+            <a href="/holdfocus/privacy/">Privacy Policy</a>
+            <a href="/holdfocus/support/">Support</a>
+        </div>
+
+        <footer>
+            <img src="/FDZ-Logo-Only.png" alt="">
+            <p>Powered by Data &amp; Strategy</p>
+        </footer>
+    </div>
+</body>
+</html>
