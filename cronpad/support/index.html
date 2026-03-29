@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Support - CronPad</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: hsl(46.82, 100%, 50%);
+            color: #000;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container { max-width: 700px; margin: 0 auto; }
+        nav { margin-bottom: 2rem; }
+        nav a { color: #000; text-decoration: none; opacity: 0.7; }
+        nav a:hover { opacity: 1; }
+        h1 { font-size: 2rem; font-weight: 600; margin-bottom: 2rem; }
+        h2 { font-size: 1.3rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; }
+        p { line-height: 1.7; color: #000; }
+        a { color: #3498DB; }
+        .contact-box {
+            background: #f8f8f8; border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px; padding: 2rem; text-align: center; margin: 2rem 0;
+        }
+        .contact-box p { color: #000; margin-bottom: 0.5rem; }
+        .contact-box a { font-size: 1.2rem; text-decoration: none; }
+        .faq-item { border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 1.5rem 0; }
+        .faq-item h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .faq-item p { color: #000; margin-bottom: 0; }
+        footer {
+            text-align: center; margin-top: 4rem; padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1); color: #000;
+        }
+        footer img { max-height: 72px; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/cronpad/">← CronPad</a>
+        </nav>
+
+        <h1>Support</h1>
+
+        <div class="contact-box">
+            <p>Need help? Have feedback?</p>
+            <a href="mailto:support@fallingdata.zone">support@fallingdata.zone</a>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>What is a cron expression?</h3>
+            <p>A cron expression is a string of 5 or 6 fields that defines a schedule for automated tasks. For example, <code>0 9 * * 1-5</code> means "at 9:00 AM, Monday through Friday." CronPad helps you read and write these expressions.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does CronPad support 6-field expressions?</h3>
+            <p>Yes. CronPad handles both standard 5-field cron (minute, hour, day, month, day-of-week) and extended 6-field cron (adding seconds).</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does CronPad require an internet connection?</h3>
+            <p>No. CronPad works entirely offline. All parsing and scheduling is done on your device.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Where is my history stored?</h3>
+            <p>Expression history is stored locally on your device using SwiftData. It's included in your standard device backups. If you delete the app, your history is deleted with it.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I use CronPad on both my iPhone and Mac?</h3>
+            <p>Yes. CronPad is available on iPhone, iPad, and Mac. History is stored locally on each device.</p>
+        </div>
+
+        <div class="faq-item" style="border-bottom: none;">
+            <h3>Is there a subscription?</h3>
+            <p>No. CronPad is completely free with no subscriptions, no ads, and no in-app purchases.</p>
+        </div>
+
+        <footer>
+            <img src="/FDZ-Logo-Only.png" alt="">
+            <p>Powered by Data &amp; Strategy</p>
+        </footer>
+    </div>
+</body>
+</html>
