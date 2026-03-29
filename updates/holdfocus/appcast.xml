@@ -3,12 +3,12 @@
     <channel>
         <title>HoldFocus</title>
         <item>
-            <title>1.0</title>
-            <pubDate>Sat, 28 Mar 2026 17:39:05 -0500</pubDate>
-            <sparkle:version>1</sparkle:version>
-            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <title>1.0.1</title>
+            <pubDate>Sun, 29 Mar 2026 15:35:33 -0500</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://apps.fallingdata.zone/updates/holdfocus/HoldFocus.dmg" length="1648838" type="application/octet-stream" sparkle:edSignature="RyGhZLgJQOH/FuI3vG0q2pbaqDfD5CVoxaGZpXDM0XO9bPi3lBfRGniiT5tYflSCLQXQ2tWFtYubciJZ8v8uAQ=="/>
+            <enclosure url="https://apps.fallingdata.zone/updates/holdfocus/HoldFocus.dmg" length="1648599" type="application/octet-stream" sparkle:edSignature="3Sh8AKQrbmVVoTxBr3o4VsG5HtJdVmJ6qOQp3W525fESnNAbwGvIcF73tNqKV8obHcpI4+egquwGGcxd1MUfAw=="/>
         </item>
     </channel>
 </rss>
