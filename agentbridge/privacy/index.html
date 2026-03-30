@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Privacy Policy - AgentBridge</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: hsl(46.82, 100%, 50%);
+            color: #000;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container { max-width: 700px; margin: 0 auto; }
+        nav { margin-bottom: 2rem; }
+        nav a { color: #000; text-decoration: none; opacity: 0.7; }
+        nav a:hover { opacity: 1; }
+        h1 { font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .last-updated { color: #000; margin-bottom: 2rem; }
+        h2 { font-size: 1.3rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; }
+        p { margin-bottom: 1rem; line-height: 1.7; color: #000; }
+        ul { margin-bottom: 1rem; padding-left: 1.5rem; }
+        li { margin-bottom: 0.5rem; line-height: 1.6; color: #000; }
+        a { color: #3498DB; }
+        .highlight {
+            background: #f8f8f8; border-left: 4px solid #27AE60;
+            padding: 1rem; margin: 1.5rem 0;
+        }
+        .highlight strong { color: #27AE60; }
+        footer {
+            text-align: center; margin-top: 4rem; padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1); color: #000;
+        }
+        footer img { max-height: 72px; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/agentbridge/">← AgentBridge</a>
+        </nav>
+
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: March 30, 2026</p>
+
+        <div class="highlight">
+            <strong>The short version:</strong> AgentBridge does not collect, store, or transmit any data. All communication stays on your local network.
+        </div>
+
+        <h2>Overview</h2>
+        <p>AgentBridge is a local communication tool between AI agents and Classic Mac OS computers. It operates entirely on your local network through shared folders. No data is sent to external servers.</p>
+
+        <h2>Data Collection</h2>
+        <p><strong>We do not collect any data.</strong></p>
+        <p>Neither the Classic Mac application nor the MCP server collects, transmits, or stores any information on external servers. Specifically:</p>
+        <ul>
+            <li>No personal information is collected</li>
+            <li>No usage analytics or tracking</li>
+            <li>No telemetry of any kind</li>
+            <li>No internet connection required or used</li>
+            <li>No cloud services</li>
+        </ul>
+
+        <h2>How Communication Works</h2>
+        <p>AgentBridge communicates through text files in a shared folder on your local network. Commands are written as text files to an inbox folder; responses are written to an outbox folder. This communication:</p>
+        <ul>
+            <li>Never leaves your local network</li>
+            <li>Uses only the shared folder you configure</li>
+            <li>Contains only the commands and responses you initiate through the AI agent</li>
+            <li>Is ephemeral — command and response files are consumed after processing</li>
+        </ul>
+
+        <h2>MCP Server</h2>
+        <p>The MCP server runs locally on your modern computer. It translates MCP protocol calls into text files for the shared folder. It does not make any outbound network connections.</p>
+
+        <h2>Open Source</h2>
+        <p>The MCP server source code is available on <a href="https://github.com/SeanFDZ/agentbridge">GitHub</a> under the GPL v3 license. You can inspect exactly what it does.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>If we make changes to this privacy policy, we will update the "Last updated" date above.</p>
+
+        <h2>Contact</h2>
+        <p>If you have questions about this privacy policy, please contact us at:</p>
+        <p><a href="mailto:support@fallingdata.zone">support@fallingdata.zone</a></p>
+
+        <footer>
+            <img src="/FDZ-Logo-Only.png" alt="">
+            <p>Powered by Data &amp; Strategy</p>
+        </footer>
+    </div>
+</body>
+</html>

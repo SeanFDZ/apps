@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Support - AgentBridge</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: hsl(46.82, 100%, 50%);
+            color: #000;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container { max-width: 700px; margin: 0 auto; }
+        nav { margin-bottom: 2rem; }
+        nav a { color: #000; text-decoration: none; opacity: 0.7; }
+        nav a:hover { opacity: 1; }
+        h1 { font-size: 2rem; font-weight: 600; margin-bottom: 2rem; }
+        h2 { font-size: 1.3rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; }
+        p { line-height: 1.7; color: #000; }
+        a { color: #3498DB; }
+        code { background: rgba(0,0,0,0.08); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
+        .contact-box {
+            background: #f8f8f8; border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px; padding: 2rem; text-align: center; margin: 2rem 0;
+        }
+        .contact-box p { color: #000; margin-bottom: 0.5rem; }
+        .contact-box a { font-size: 1.2rem; text-decoration: none; }
+        .faq-item { border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 1.5rem 0; }
+        .faq-item h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .faq-item p { color: #000; margin-bottom: 0; }
+        footer {
+            text-align: center; margin-top: 4rem; padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1); color: #000;
+        }
+        footer img { max-height: 72px; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/agentbridge/">← AgentBridge</a>
+        </nav>
+
+        <h1>Support</h1>
+
+        <div class="contact-box">
+            <p>Need help? Have feedback?</p>
+            <a href="mailto:support@fallingdata.zone">support@fallingdata.zone</a>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">You can also <a href="https://github.com/SeanFDZ/agentbridge/issues">open an issue on GitHub</a>.</p>
+        </div>
+
+        <h2>Getting Started</h2>
+
+        <div class="faq-item">
+            <h3>1. Download AgentBridge</h3>
+            <p>Choose the right build for your Mac: <strong>68K</strong> for compact Macs, SE, Classic, II series, LC series, and Quadras. <strong>PPC</strong> for Power Macs, G3s, and later machines running Mac OS 8.1+. Download the <code>.bin</code> (MacBinary) file.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>2. Set up a shared folder</h3>
+            <p>Both your Classic Mac and modern computer need access to the same folder. Options: a NAS or file server (AFP/SMB), a BasiliskII/SheepShaver shared directory, or any other shared filesystem. Create an <code>AgentBridge-MyMac</code> folder with <code>inbox</code>, <code>outbox</code>, and <code>assets</code> subfolders inside it.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>3. Launch AgentBridge on your Mac</h3>
+            <p>Copy the AgentBridge application to your Classic Mac (via the shared folder or any other method). Launch it and point it at the shared folder. It will begin polling the inbox for commands.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>4. Set up the MCP server</h3>
+            <p>On your modern computer, clone the <a href="https://github.com/SeanFDZ/agentbridge">GitHub repo</a>, run <code>npm install && npm run build</code>, then configure Claude Desktop or Claude Code to use the MCP server. See the README for detailed configuration examples.</p>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>Which build do I need — 68K or PPC?</h3>
+            <p>If your Mac has a Motorola 680x0 processor (Mac Plus, SE, Classic, II, LC, Quadra series), use the 68K build. If it has a PowerPC processor (Power Mac, G3, iMac G3, iBook), use the PPC build. The 68K build also works on PowerPC Macs, but the PPC build is optimized for those machines.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What's the difference between .bin and .dsk files?</h3>
+            <p>The <code>.bin</code> file is MacBinary format — the standard way to transfer Classic Mac files. The <code>.dsk</code> file is a disk image you can mount directly. Most users should download the <code>.bin</code> file. Disk images are available on the <a href="https://github.com/SeanFDZ/agentbridge/releases">GitHub releases page</a>.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does AgentBridge modify my Mac's system?</h3>
+            <p>No. AgentBridge is a regular application. It doesn't install extensions, modify your System Folder, or change any configuration. Launch it, quit it, delete it — your Mac is untouched.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I connect multiple Macs?</h3>
+            <p>Yes. The MCP server supports fleet configuration — point multiple Classic Macs at different shared folders and configure each as a target in <code>fleet.json</code>. The AI can address each Mac by name.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does it work with emulators?</h3>
+            <p>Yes. AgentBridge works with BasiliskII, SheepShaver, and any other emulator that supports shared folder access between the host and guest OS.</p>
+        </div>
+
+        <div class="faq-item" style="border-bottom: none;">
+            <h3>Does AgentBridge need an internet connection?</h3>
+            <p>No. All communication happens through the shared folder on your local network. The AI agent connects via the MCP server on your modern computer — the Classic Mac never touches the internet.</p>
+        </div>
+
+        <footer>
+            <img src="/FDZ-Logo-Only.png" alt="">
+            <p>Powered by Data &amp; Strategy</p>
+        </footer>
+    </div>
+</body>
+</html>
