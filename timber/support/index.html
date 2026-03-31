@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Support - Timber</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: hsl(46.82, 100%, 50%);
+            color: #000;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container { max-width: 700px; margin: 0 auto; }
+        nav { margin-bottom: 2rem; }
+        nav a { color: #000; text-decoration: none; opacity: 0.7; }
+        nav a:hover { opacity: 1; }
+        h1 { font-size: 2rem; font-weight: 600; margin-bottom: 2rem; }
+        h2 { font-size: 1.3rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; }
+        p { line-height: 1.7; color: #000; }
+        a { color: #3498DB; }
+        code { background: rgba(0,0,0,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .contact-box {
+            background: #f8f8f8; border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px; padding: 2rem; text-align: center; margin: 2rem 0;
+        }
+        .contact-box p { color: #000; margin-bottom: 0.5rem; }
+        .contact-box a { font-size: 1.2rem; text-decoration: none; }
+        .faq-item { border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding: 1.5rem 0; }
+        .faq-item h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .faq-item p { color: #000; margin-bottom: 0; }
+        footer {
+            text-align: center; margin-top: 4rem; padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1); color: #000;
+        }
+        footer img { max-height: 72px; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/timber/">&larr; Timber</a>
+        </nav>
+
+        <h1>Support</h1>
+
+        <div class="contact-box">
+            <p>Need help? Have feedback?</p>
+            <a href="mailto:support@fallingdata.zone">support@fallingdata.zone</a>
+        </div>
+
+        <h2>Getting Started</h2>
+        <p>Open any log file by dragging it onto the Timber window or dock icon, or use File &gt; Open. Timber auto-detects JSON Lines, logfmt, syslog, Apache, and plain text formats. No configuration needed.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>What file formats does Timber support?</h3>
+            <p>Timber auto-detects and parses JSON Lines (.jsonl), logfmt, syslog (RFC 3164 &amp; 5424), Apache/nginx combined format, and plain text. It also opens iOS/macOS crash reports (.ips and .crash) and gzip-compressed files (.gz).</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How large a file can Timber handle?</h3>
+            <p>Timber uses memory-mapped I/O and can handle files up to 2 GB. For very large files, it uses virtual scrolling so only visible rows are rendered.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I search with regular expressions?</h3>
+            <p>Yes. Click the <code>.*</code> button in the toolbar to enable regex mode. Your search text will be interpreted as a regular expression.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does the SQL query feature work?</h3>
+            <p>Timber loads your log data into an in-memory SQLite database. Open the SQL panel to write queries like <code>SELECT * FROM log_lines WHERE level = 'error' AND message LIKE '%timeout%'</code>. Press Cmd+Enter to execute. Results can be exported to CSV or JSON.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I follow a live log file?</h3>
+            <p>Yes. Press Cmd+T or click the Tail button in the toolbar. Timber uses kqueue for low-latency file change detection and will auto-scroll to new entries as they arrive.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does crash log symbolication work?</h3>
+            <p>Open a .ips crash report and Timber will automatically search for matching dSYM files via Spotlight. You can also drag dSYM files onto the crash view or browse for them manually. Symbolication resolves memory addresses to function names, file paths, and line numbers.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does Timber require an internet connection?</h3>
+            <p>No. Timber works entirely offline. All parsing, searching, and analysis happens on your Mac. No data ever leaves your device.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does the trial work?</h3>
+            <p>Timber includes a 14-day free trial with full functionality. After the trial, you can purchase a one-time license to continue using the app. No subscription required.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I merge multiple log files?</h3>
+            <p>Yes. Open 2&ndash;6 log files in separate tabs, then press Cmd+Shift+M to merge them into a unified chronological timeline. Each source file is color-coded for easy identification.</p>
+        </div>
+
+        <div class="faq-item" style="border-bottom: none;">
+            <h3>Can I automate Timber?</h3>
+            <p>Yes. Timber supports the <code>timber://</code> URL scheme. For example, <code>timber://open?path=/var/log/system.log&amp;tail=true</code> opens a file and starts tailing it. This enables integration with scripts, Alfred workflows, and AI agents.</p>
+        </div>
+
+        <h2>Keyboard Shortcuts</h2>
+        <div class="faq-item" style="border-bottom: none;">
+            <p>
+                <strong>Cmd+O</strong> &mdash; Open file<br>
+                <strong>Cmd+W</strong> &mdash; Close tab<br>
+                <strong>Cmd+T</strong> &mdash; Toggle tail mode<br>
+                <strong>Cmd+G</strong> &mdash; Jump to line<br>
+                <strong>Cmd+J</strong> &mdash; Jump to timestamp<br>
+                <strong>Cmd+C</strong> &mdash; Copy selection as text<br>
+                <strong>Cmd+Shift+C</strong> &mdash; Copy selection as JSON<br>
+                <strong>Cmd+Shift+M</strong> &mdash; Merge open files<br>
+                <strong>Cmd+Shift+]</strong> / <strong>[</strong> &mdash; Next / previous tab<br>
+                <strong>Cmd+Enter</strong> &mdash; Execute SQL query
+            </p>
+        </div>
+
+        <footer>
+            <img src="/FDZ-Logo-Only.png" alt="">
+            <p>Powered by Data &amp; Strategy</p>
+        </footer>
+    </div>
+</body>
+</html>

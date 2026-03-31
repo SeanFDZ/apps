@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Timber - Native Log File Analyzer for macOS</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: hsl(46.82, 100%, 50%);
+            color: #000;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container { max-width: 700px; margin: 0 auto; }
+        nav { margin-bottom: 2rem; }
+        nav a { color: #000; text-decoration: none; opacity: 0.7; }
+        nav a:hover { opacity: 1; }
+        header { text-align: center; margin-bottom: 3rem; }
+        h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 0.5rem; color: #000; }
+        .tagline { color: #000; font-size: 1.2rem; margin-bottom: 2rem; }
+        .store-badges { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .store-badge {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #000;
+            border-radius: 8px;
+            color: hsl(46.82, 100%, 50%);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .store-badge:hover { opacity: 0.9; }
+        .price-note { margin-top: 0.75rem; font-size: 0.9rem; opacity: 0.7; }
+        .features { margin: 3rem 0; }
+        .feature {
+            background: #f8f8f8;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .feature h3 { color: #000; margin-bottom: 0.5rem; font-weight: 600; }
+        .feature p { color: #000; line-height: 1.6; }
+        code { background: rgba(0,0,0,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .privacy-highlight {
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid rgba(39, 174, 96, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .privacy-highlight h3 { color: #27AE60; margin-bottom: 0.5rem; font-weight: 600; }
+        .privacy-highlight p { color: #000; }
+        .links { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; }
+        .links a { color: #000; text-decoration: none; opacity: 0.7; }
+        .links a:hover { opacity: 1; }
+        footer {
+            text-align: center; margin-top: 4rem; padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1); color: #000;
+        }
+        footer img { max-height: 72px; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">&larr; Falling Data Zone</a>
+        </nav>
+
+        <header>
+            <img src="/timber/icon.png" alt="Timber" style="width: 128px; height: 128px; border-radius: 24px; margin-bottom: 1rem;" onerror="this.style.display='none'">
+            <h1>Timber</h1>
+            <p class="tagline">Native Log File Analyzer for macOS</p>
+            <div class="store-badges">
+                <a href="https://apps.apple.com/app/id6761418573" class="store-badge">Download on the Mac App Store</a>
+            </div>
+            <p class="price-note">$34.99 &mdash; One-time purchase. 14-day free trial.</p>
+        </header>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Instant File Opening</h3>
+                <p>Drag a log file onto Timber and see parsed, color-coded, searchable entries in milliseconds. Auto-detects JSON Lines, logfmt, syslog, Apache, and plain text formats. No configuration needed.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Handles Files Up to 2 GB</h3>
+                <p>Memory-mapped I/O with virtual scrolling. Open massive log files without hanging or running out of memory. Scroll through millions of lines at 60 fps.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Search &amp; Filter</h3>
+                <p>Live search-as-you-type with parallel substring matching across all CPU cores. Filter by log level, time range, or field values. Toggle between filter and highlight modes. Save named filters for reuse.</p>
+            </div>
+
+            <div class="feature">
+                <h3>SQL Queries</h3>
+                <p>Query your logs with SQL. Timber loads entries into an in-memory SQLite database with full-text search indexing. Write queries with syntax highlighting and autocomplete, then export results to CSV or JSON.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Live Tail Mode</h3>
+                <p>Follow active log files in real time. Timber uses kqueue for low-latency change detection &mdash; new entries appear instantly as they're written. Pause and resume without losing your scroll position.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Crash Log Analysis</h3>
+                <p>Open .ips and .crash files from iOS and macOS. View crash summaries, thread stacks, and binary images. Symbolicate with dSYM files for function names and line numbers.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Multi-File Merge</h3>
+                <p>Merge 2&ndash;6 log files into a unified chronological timeline. Each source is color-coded so you can trace events across services and processes.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Built Native for macOS</h3>
+                <p>SwiftUI and AppKit. Not Electron. Not a web wrapper. Timber respects your Mac &mdash; Dark Mode, keyboard shortcuts, VoiceOver, and all the native behaviors you expect.</p>
+            </div>
+        </div>
+
+        <div class="privacy-highlight">
+            <h3>No Cloud. No Tracking. No Subscription.</h3>
+            <p>Everything happens on your Mac. No network requests, no analytics, no account required.<br>One-time purchase. Your logs are your business.</p>
+        </div>
+
+        <div class="links">
+            <a href="/timber/privacy/">Privacy Policy</a>
+            <a href="/timber/support/">Support</a>
+        </div>
+
+        <footer>
+            <img src="/FDZ-Logo-Only.png" alt="">
+            <p>Powered by Data &amp; Strategy</p>
+        </footer>
+    </div>
+</body>
+</html>
