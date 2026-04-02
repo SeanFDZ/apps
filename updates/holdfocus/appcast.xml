@@ -8,7 +8,7 @@
             <sparkle:version>3</sparkle:version>
             <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://apps.fallingdata.zone/updates/holdfocus/HoldFocus.dmg" length="1652126" type="application/octet-stream" sparkle:edSignature="AG2v7hztDZ96B7hy9O+lI7dY7fJSYHz7snsHxvwRCxPjqousUDxEQEuY5vLo7JmvCNn8I9lo7fACesx7F0qoCQ=="/>
+            <enclosure url="https://apps.fallingdata.zone/updates/holdfocus/HoldFocus.dmg" length="1652125" type="application/octet-stream" sparkle:edSignature="1I61QfZdxTUukPhzrjv+jaYUEIvQct8bqKL+ovTM1it19vBlSFnMCNRmds0EU89z8b8PZ7XMASU46lSgxaIFDA=="/>
         </item>
         <item>
             <title>1.0.1</title>
