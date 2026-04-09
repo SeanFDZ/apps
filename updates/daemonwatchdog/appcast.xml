@@ -8,7 +8,7 @@
             <sparkle:version>1</sparkle:version>
             <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="DaemonWatchdog.dmg" length="3129641" type="application/octet-stream"/>
+            <enclosure url="DaemonWatchdog.dmg" length="3129796" type="application/octet-stream"/>
         </item>
     </channel>
 </rss>
