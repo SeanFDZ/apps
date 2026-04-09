@@ -8,7 +8,7 @@
             <sparkle:version>4</sparkle:version>
             <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://apps.fallingdata.zone/updates/holdfocus/HoldFocus.dmg" length="1653404" type="application/octet-stream" sparkle:edSignature="46AJqK2EtsIHefkdKTgd1Kc013Rjj6lMlYVfpTtnftpYH7hSmBAxt0dk9F9g3uKWfH7kX4FkUp412Qgsdl0hDw=="/>
+            <enclosure url="https://github.com/SeanFDZ/apps/releases/download/holdfocus-v1.0.3/HoldFocus.dmg" length="1653404" type="application/octet-stream" sparkle:edSignature="46AJqK2EtsIHefkdKTgd1Kc013Rjj6lMlYVfpTtnftpYH7hSmBAxt0dk9F9g3uKWfH7kX4FkUp412Qgsdl0hDw=="/>
         </item>
         <item>
             <title>1.0.2</title>
@@ -16,7 +16,7 @@
             <sparkle:version>3</sparkle:version>
             <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://apps.fallingdata.zone/updates/holdfocus/HoldFocus.dmg" length="1652125" type="application/octet-stream" sparkle:edSignature="1I61QfZdxTUukPhzrjv+jaYUEIvQct8bqKL+ovTM1it19vBlSFnMCNRmds0EU89z8b8PZ7XMASU46lSgxaIFDA=="/>
+            <enclosure url="https://github.com/SeanFDZ/apps/releases/download/holdfocus-v1.0.3/HoldFocus.dmg" length="1652125" type="application/octet-stream" sparkle:edSignature="1I61QfZdxTUukPhzrjv+jaYUEIvQct8bqKL+ovTM1it19vBlSFnMCNRmds0EU89z8b8PZ7XMASU46lSgxaIFDA=="/>
         </item>
         <item>
             <title>1.0.1</title>
@@ -24,7 +24,7 @@
             <sparkle:version>2</sparkle:version>
             <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://apps.fallingdata.zone/updates/holdfocus/HoldFocus.dmg" length="1648599" type="application/octet-stream" sparkle:edSignature="3Sh8AKQrbmVVoTxBr3o4VsG5HtJdVmJ6qOQp3W525fESnNAbwGvIcF73tNqKV8obHcpI4+egquwGGcxd1MUfAw=="/>
+            <enclosure url="https://github.com/SeanFDZ/apps/releases/download/holdfocus-v1.0.3/HoldFocus.dmg" length="1648599" type="application/octet-stream" sparkle:edSignature="3Sh8AKQrbmVVoTxBr3o4VsG5HtJdVmJ6qOQp3W525fESnNAbwGvIcF73tNqKV8obHcpI4+egquwGGcxd1MUfAw=="/>
         </item>
     </channel>
 </rss>

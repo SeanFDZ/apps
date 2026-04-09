@@ -1,14 +1,14 @@
 <?xml version="1.0" standalone="yes"?>
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
-        <title>SystemDaemonWatchdog</title>
+        <title>DaemonWatchdog</title>
         <item>
             <title>1.0.0</title>
             <pubDate>Thu, 09 Apr 2026 07:58:28 -0500</pubDate>
             <sparkle:version>1</sparkle:version>
             <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="DaemonWatchdog.dmg" length="3129796" type="application/octet-stream"/>
+            <enclosure url="https://github.com/SeanFDZ/apps/releases/download/daemonwatchdog-v1.0.0/DaemonWatchdog.dmg" length="3129796" type="application/octet-stream" sparkle:edSignature="98DS6KjDDl6wUgRpRIduHRejiA5HyNOjGsUD/wkdYoqAYjJj1FixE+VHEHJZViUOARiMdhB2/IYczBrXzCnvBA=="/>
         </item>
     </channel>
 </rss>
