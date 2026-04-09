@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>CLI &amp; MCP Server - Daemon Watchdog</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: hsl(46.82, 100%, 50%);
+            color: #000;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container { max-width: 700px; margin: 0 auto; }
+        nav { margin-bottom: 2rem; }
+        nav a { color: #000; text-decoration: none; opacity: 0.7; }
+        nav a:hover { opacity: 1; }
+        h1 { font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .subtitle { color: rgba(0,0,0,0.7); margin-bottom: 2rem; line-height: 1.6; }
+        h2 { font-size: 1.5rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.15rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; }
+        p { line-height: 1.7; color: #000; margin-bottom: 1rem; }
+        a { color: #3498DB; }
+        code {
+            background: rgba(0, 0, 0, 0.08);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        pre {
+            background: #1a1a1a;
+            color: #e0e0e0;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+            font-size: inherit;
+        }
+        .note {
+            background: rgba(52, 152, 219, 0.1);
+            border: 1px solid rgba(52, 152, 219, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .note p { margin-bottom: 0; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 0.6rem 0.8rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 0.95rem;
+        }
+        th {
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.04);
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1.5rem 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 { margin-top: 0; font-size: 1.1rem; }
+        .faq-item p { color: #000; margin-bottom: 0; }
+        footer {
+            text-align: center; margin-top: 4rem; padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1); color: #000;
+        }
+        footer img { max-height: 72px; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/daemonwatchdog/support/">&larr; Support</a>
+        </nav>
+
+        <h1>CLI &amp; MCP Server</h1>
+        <p class="subtitle">Daemon Watchdog includes a command-line tool and an MCP server for AI agents.  Both connect to the running app &mdash; Daemon Watchdog must be open in your menu bar.</p>
+
+        <div class="note">
+            <p>CLI and MCP access requires an active trial or valid license.</p>
+        </div>
+
+        <h2>CLI Setup</h2>
+
+        <p>The CLI ships inside the app.  Run it directly:</p>
+
+        <pre><code>"/Applications/DaemonWatchdog.app/Contents/MacOS/sdw" status</code></pre>
+
+        <p>Or create a symlink so you can use <code>sdw</code> from anywhere:</p>
+
+        <pre><code>ln -s "/Applications/DaemonWatchdog.app/Contents/MacOS/sdw" /usr/local/bin/sdw</code></pre>
+
+        <h3>Commands</h3>
+
+        <p><strong>Check all daemons:</strong></p>
+        <pre><code>sdw status</code></pre>
+
+        <p><strong>JSON output (for scripting):</strong></p>
+        <pre><code>sdw status --json</code></pre>
+
+        <p><strong>View 24-hour memory history:</strong></p>
+        <pre><code>sdw health corespotlightd</code></pre>
+
+        <p><strong>Restart a leaking daemon:</strong></p>
+        <pre><code>sdw restart corespotlightd</code></pre>
+
+        <p><strong>Clear auto-restart suppression:</strong></p>
+        <pre><code>sdw resume corespotlightd</code></pre>
+
+        <p><strong>App version and license info:</strong></p>
+        <pre><code>sdw version</code></pre>
+
+        <p>All restart requests go through the same safety checks as the app &mdash; cooldowns, backup detection, frequency caps, and WindowServer protection.</p>
+
+        <h2>MCP Server Setup</h2>
+
+        <p>The MCP server lets AI agents like Claude monitor your daemons and request restarts through natural language.</p>
+
+        <h3>Claude Desktop</h3>
+
+        <p>1. Open your config file:</p>
+        <pre><code>~/Library/Application Support/Claude/claude_desktop_config.json</code></pre>
+
+        <p>2. Add the Daemon Watchdog server:</p>
+        <pre><code>{
+  "mcpServers": {
+    "sdw": {
+      "command": "/Applications/DaemonWatchdog.app/Contents/MacOS/sdw-mcp"
+    }
+  }
+}</code></pre>
+
+        <p>3. Restart Claude Desktop.</p>
+
+        <h3>Claude Code</h3>
+
+        <p>Add to your MCP configuration:</p>
+        <pre><code>{
+  "mcpServers": {
+    "sdw": {
+      "command": "/Applications/DaemonWatchdog.app/Contents/MacOS/sdw-mcp"
+    }
+  }
+}</code></pre>
+
+        <h3>Cursor</h3>
+
+        <p>Add to your Cursor MCP settings with the same configuration block above.</p>
+
+        <h3>What you can ask</h3>
+
+        <p>Once configured, try:</p>
+        <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+            <li style="margin-bottom: 0.4rem; line-height: 1.6;">"What's the status of my system daemons?"</li>
+            <li style="margin-bottom: 0.4rem; line-height: 1.6;">"Show me the memory history for mds_stores"</li>
+            <li style="margin-bottom: 0.4rem; line-height: 1.6;">"Restart corespotlightd if it's leaking"</li>
+            <li style="margin-bottom: 0.4rem; line-height: 1.6;">"Which daemons have been restarted today?"</li>
+        </ul>
+
+        <h3>Available tools</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tool</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>get_daemon_status</code></td>
+                    <td>Current status of all monitored daemons</td>
+                </tr>
+                <tr>
+                    <td><code>get_daemon_health</code></td>
+                    <td>24-hour memory history for a specific daemon</td>
+                </tr>
+                <tr>
+                    <td><code>restart_daemon</code></td>
+                    <td>Request a daemon restart (safety checks apply)</td>
+                </tr>
+                <tr>
+                    <td><code>resume_daemon</code></td>
+                    <td>Clear auto-restart suppression</td>
+                </tr>
+                <tr>
+                    <td><code>get_version</code></td>
+                    <td>App version, license status, system info</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>Do I need an API key?</h3>
+            <p>No.  The MCP server runs locally and connects to the app via a Unix socket on your Mac.  No API keys, no network connections, no data sent externally.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can an AI agent bypass the safety checks?</h3>
+            <p>No.  All restart requests from CLI and MCP go through the same safety pipeline as the app.  WindowServer restarts are refused, backupd checks for active Time Machine backups, and cooldowns and frequency caps are enforced.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why does the CLI say "Cannot connect"?</h3>
+            <p>Daemon Watchdog must be running in the menu bar.  The CLI and MCP server communicate with the app via a local socket that only exists while the app is open.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why does the CLI say "Trial expired"?</h3>
+            <p>CLI and MCP access requires an active trial or valid license.  After the 14-day trial, open Daemon Watchdog and enter your license key.  The app continues monitoring without a license, but CLI and MCP access stops.</p>
+        </div>
+
+        <div class="faq-item" style="border-bottom: none;">
+            <h3>Does the MCP server work with other AI tools?</h3>
+            <p>The MCP server follows the Model Context Protocol standard and works with any MCP-compatible client.  It communicates via JSON-RPC over stdio.</p>
+        </div>
+
+        <footer>
+            <img src="/FDZ-Logo-Only.png" alt="">
+            <p>Powered by Data &amp; Strategy</p>
+        </footer>
+    </div>
+</body>
+</html>
