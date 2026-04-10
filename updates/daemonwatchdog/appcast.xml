@@ -3,6 +3,14 @@
     <channel>
         <title>DaemonWatchdog</title>
         <item>
+            <title>1.0.1</title>
+            <pubDate>Thu, 10 Apr 2026 00:00:00 -0500</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/SeanFDZ/apps/releases/download/daemonwatchdog-v1.0.1/DaemonWatchdog.dmg" sparkle:edSignature="7hd0IzsAunGwDtk9+n1OszZqYiu47oOsgofHMXd1iBAXrg3EOwP6DODZYJSutn/g2TqgetcRSJQebAdlivKYAw==" length="3097066" type="application/octet-stream"/>
+        </item>
+        <item>
             <title>1.0.0</title>
             <pubDate>Thu, 09 Apr 2026 07:58:28 -0500</pubDate>
             <sparkle:version>1</sparkle:version>
